@@ -1,8 +1,8 @@
-/** 8. Fazer um programa para que o usuário digite uma palavra de até 15 posições.
+/** 8. Fazer um programa para que o usuÃ¡rio digite uma palavra de atÃ© 15 posiÃ§Ãµes.
 Caso a palavra tenha menos do que 6 caracteres OU mais do que 15 caracteres,
-exibir mensagem de erro e retornar para nova digitação.
-O programa deverá imprimir apenas os caracteres com índice de valor par.
-Ao final exibir a média dos índices pares computados.  **/
+exibir mensagem de erro e retornar para nova digitaÃ§Ã£o.
+O programa deverÃ¡ imprimir apenas os caracteres com Ã­ndice de valor par.
+Ao final exibir a mÃ©dia dos Ã­ndices pares computados.  **/
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -11,7 +11,7 @@ Ao final exibir a média dos índices pares computados.  **/
 main() {
 
     char palavra[15] = {};
-    int i = 0, tam = 0, pares = 0;
+    int i = 0, tam = 0, soma = 0, total = 0;
     float media = 0;
 
     system("cls");
@@ -28,13 +28,16 @@ main() {
         tam = strlen(palavra);
     }
 
-    while(i < tam) {
+    while(i <= tam) {
         if(i % 2 == 0) {
-            media = palavra[i]/tam;
             printf("Caractere: %c \t Posicao: %d \n", palavra[i], i);
+            soma += i;
+            total++;
         }
         i++;
     }
+
+    media = soma/total;
 
     printf("Media dos indices pares: %.2f \n", media);
     puts("\nFIM DO PROGRAMA! \n");
