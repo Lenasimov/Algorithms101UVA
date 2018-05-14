@@ -11,7 +11,7 @@ Ao final exibir a média dos índices pares computados.  **/
 main() {
 
     char palavra[15] = {};
-    int i = 0, tam = 0, soma = 0, total = 0;
+    int i = 0, tam = 0, soma = 0, totalPares = 0;
     float media = 0;
 
     system("cls");
@@ -32,12 +32,12 @@ main() {
         if(i % 2 == 0) {
             printf("Caractere: %c \t Posicao: %d \n", palavra[i], i);
             soma += i;
-            total++;
+            totalPares++;
         }
         i++;
     }
 
-    media = soma/total;
+    media = soma/totalPares;
 
     printf("Media dos indices pares: %.2f \n", media);
     puts("\nFIM DO PROGRAMA! \n");
