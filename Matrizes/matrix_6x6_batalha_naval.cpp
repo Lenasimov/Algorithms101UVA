@@ -1,8 +1,8 @@
 /** 3) Fazer um programa de batalha naval.
 - Preencher uma matriz 6x6;
-- Informar linha e coluna para a digitaÁ„o do valor;
-- Verificar na matriz se a informaÁ„o (o n˙mero) existe naquela posiÁ„o;
-- Fazer isto atÈ que o usu·rio n„o queira mais jogar. **/
+- Informar linha e coluna para a digita√ß√£o do valor;
+- Verificar na matriz se a informa√ß√£o (o n√∫mero) existe naquela posi√ß√£o;
+- Fazer isto at√© que o usu√°rio n√£o queira mais jogar. **/
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -12,23 +12,12 @@ void searchNumberInMatrix(int matrix[6][6], int r, int c, int n)
 {
 	int i = 0, j = 0, isFound = 0, numberFound = 0, matrixPosFound[6][6] = {{}};
 
-	for(i = 0; i < 6; i++)
-	{
-		for(j = 0; j < 6; j++)
-		{
-            if(matrix[i][j] == n)
-            {
-                isFound = 1;
-                numberFound = n;
-                //matrixPosFound[c][r] = matrix[i][j];
-            }
-		}
-	}
+    int numberFoundAtMatrixPos = matrix[r][c];
 
-	if(isFound == 1)
+	if(numberFoundAtMatrixPos == n)
 	{
-		printf("NUMBER FOUND! \nNUMBER: %d \n", numberFound);
-		//printf("ROW %d \tCOLUMN: %d \n", r, c);
+		printf("NUMBER FOUND! \nNUMBER: %d \n", numberFoundAtMatrixPos);
+		printf("ROW %d \tCOLUMN: %d \n", r, c);
 	}
 	else
 	{
@@ -48,7 +37,7 @@ main()
 	{
 		for(j = 0; j < 6; j++)
 		{
-			printf("ROW %d \tCOLUMN %d : ", i + 1, j + 1);
+			printf("ROW %d \tCOLUMN %d : ", i, j);
 			scanf("%d", &matrix[i][j]);
 		}
 		printf("\n");
