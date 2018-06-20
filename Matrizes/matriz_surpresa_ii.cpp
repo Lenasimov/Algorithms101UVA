@@ -1,26 +1,26 @@
 /**
 1. Fazer um programa para trabalhar com uma matriz 2 x 4;
 
-2. O usu·rio dever· digitar a quantidade de valores inteiros respeitando o tamanho da matriz (linha x coluna).
-Ou seja, sÛ poder· digitar 8 vezes. O usu·rio n„o pode digitar um n˙mero a mais do que foi definido como
+2. O usu√°rio dever√° digitar a quantidade de valores inteiros respeitando o tamanho da matriz (linha x coluna).
+Ou seja, s√≥ poder√° digitar 8 vezes. O usu√°rio n√£o pode digitar um n√∫mero a mais do que foi definido como
 tamanho total da matriz (linha x coluna);
 
-3. O usu·rio n„o poder· digitar um n˙mero menor do que zero e nem maior do que 20 para ser armazenado na matriz;
+3. O usu√°rio n√£o poder√° digitar um n√∫mero menor do que zero e nem maior do que 20 para ser armazenado na matriz;
 
-4. Os n˙meros ser„o digitados de forma aleatÛria para serem armazenados na matriz.
-Ou seja, n„o ter„o uma sequÍncia lÛgica na digitaÁ„o por parte do usu·rio;
+4. Os n√∫meros ser√£o digitados de forma aleat√≥ria para serem armazenados na matriz.
+Ou seja, n√£o ter√£o uma sequ√™ncia l√≥gica na digita√ß√£o por parte do usu√°rio;
 
-5. … preciso checar a quantidade de n˙meros digitados que sejam menores que 11 e entre 11 e 20,
-pois a matriz deve estar toda preenchida, n„o pode haver linha e/ou coluna com espaÁo em branco.
- Caso o usu·rio j· tenha preenchido uma linha por completo ,o programa dever· verificar que a linha
- est· completa e n„o permitir mais o armazenamento naquela linha, exibindo uma mensagem de erro
- e obrigando o usu·rio a digitar um novo n˙mero na linha seguinte;
+5. √â preciso checar a quantidade de n√∫meros digitados que sejam menores que 11 e entre 11 e 20,
+pois a matriz deve estar toda preenchida, n√£o pode haver linha e/ou coluna com espa√ßo em branco.
+ Caso o usu√°rio j√° tenha preenchido uma linha por completo ,o programa dever√° verificar que a linha
+ est√° completa e n√£o permitir mais o armazenamento naquela linha, exibindo uma mensagem de erro
+ e obrigando o usu√°rio a digitar um novo n√∫mero na linha seguinte;
 
-6. Na primeira linha sÛ poder„o ser armazenados n˙meros menores que 11.
-Na segunda linha, apenas n˙meros entre 11 e 20;
+6. Na primeira linha s√≥ poder√£o ser armazenados n√∫meros menores que 11.
+Na segunda linha, apenas n√∫meros entre 11 e 20;
 
-7. ApÛs a finalizaÁ„o da digitaÁ„o, imprimir a matriz multiplicando cada valor dela por 2,
-e imprimir o total do somatÛrio dos n˙meros multiplicados por 2.
+7. Ap√≥s a finaliza√ß√£o da digita√ß√£o, imprimir a matriz multiplicando cada valor dela por 2,
+e imprimir o total do somat√≥rio dos n√∫meros multiplicados por 2.
 
 Exemplo da matriz 2 x 4:
 
@@ -49,12 +49,8 @@ main() {
                     printf("\nEnter an integer number for row %d column %d : ", i + 1, j + 1);
                     scanf("%d", &num);
 
-                    if(num < 0 || num > 20) {
-                        printf("\n[ ERROR ] : Only numbers within the range [0-20] are allowed! \n");
-                        goto row_0;
-
-                    } else if(num > 11) {
-                        printf("\n[ ERROR ] : Row %d only allows numbers within the range [0-11]! \n", i + 1);
+                    if(num < 0 || num >= 11) {
+                    	printf("\n[ ERROR ] : Row %d only allows numbers within the range [0-10]! \n", i + 1);
                         goto row_0;
 
                     } else {
@@ -68,11 +64,7 @@ main() {
                     printf("\nEnter an integer number for row %d column %d : ", i + 1, j + 1);
                     scanf("%d", &num);
 
-                    if(num < 0 || num > 20) {
-                        printf("\n[ ERROR ] : Only numbers within the range [0-20] are allowed! \n");
-                        goto row_1;
-
-                    } else if(num < 11) {
+                    if(num < 11 || num > 20) {
                         printf("\n[ ERROR ] : Row %d only allows numbers within the range [11-20]! \n", i + 1);
                         goto row_1;
 
@@ -84,10 +76,10 @@ main() {
 
         }
 
-        if(i == 0 && countUnder11 > 0) {
+        if(countUnder11 > 0) {
             printf("\nRow %d completed! Numbers smaller than 11 completed! \n", i + 1);
 
-        } else if(i == 1 && countOver11 > 0) {
+        } else if(countOver11 > 0) {
             printf("\nRow %d completed! Numbers greater than 11 completed! \n", i + 1);
         }
         puts("\n");
